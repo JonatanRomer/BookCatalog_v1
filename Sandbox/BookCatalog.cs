@@ -17,12 +17,17 @@ namespace Sandbox
         public void AddBook(Book aBook)
         {
             // Add code that can add the given Book object to the list
+            books.Add(aBook);
         }
 
         public void PrintAllBooks()
         {
             // Add code that can print all books in the list
             // Hint: You will need a repetition statement
+            foreach (Book bog in books)
+            {
+                Console.WriteLine($"The book is called: {bog}");
+            }
         }
 
         public Book LookupBook(string isbn)
@@ -33,6 +38,14 @@ namespace Sandbox
             // which has a matching ISBN number. The variable matchingBook
             // should be set to this book
             // Hint: You will need a repetition statement
+
+            foreach (Book bo in books)
+            {
+                if (bo.GetISBN() == isbn)
+                {
+                    matchingBook = bo;
+                }
+            }
 
             return matchingBook;
         }
